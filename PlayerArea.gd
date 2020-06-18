@@ -1,6 +1,5 @@
 extends Area2D
 
-var speed: float = 1800
 var velocity: Vector2 = Vector2(0, 0)
 onready var screen_size: Vector2 = get_viewport_rect().size
 
@@ -12,6 +11,6 @@ func _input(event: InputEvent) -> void:
         self.velocity.x = -1
 
 func _process(delta: float) -> void:
-    self.position += self.velocity * speed * delta
+    self.position += self.velocity * Globals.speed * delta
     # Limit position to screen size
     self.position.x = clamp(self.position.x, 0, self.screen_size.x)

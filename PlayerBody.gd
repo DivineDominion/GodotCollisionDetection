@@ -1,6 +1,5 @@
 extends KinematicBody2D
 
-var speed: float = 1800
 var velocity: Vector2 = Vector2()
 onready var screen_size: Vector2 = get_viewport_rect().size
 
@@ -13,7 +12,7 @@ func _input(event: InputEvent) -> void:
 
 func _physics_process(delta: float) -> void:
     if velocity.length() > 0:
-        velocity = velocity.normalized() * speed
+        velocity = velocity.normalized() * Globals.speed
         move_and_collide(velocity * delta)
 
 func _process(delta: float) -> void:
