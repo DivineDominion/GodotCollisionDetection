@@ -31,6 +31,7 @@ shape = SubResource( 1 )
 
 [node name="PlayerArea" type="Area2D" parent="."]
 position = Vector2( 0, 70.2444 )
+z_index = 999
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
