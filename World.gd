@@ -18,18 +18,22 @@ var first_row_y: float
 func _ready() -> void:
     # Vertically center both rows, and compute the first row's Y position based on the resolution
     first_row_y = (screen_size.y - TILE_HEIGHT * 2 - ROW_GAP) / 2
+
     # Position kinematic player variant inside the first row
     $PlayerBody.position = Vector2(0, first_row_y + TILE_HEIGHT / 2)
+    # Position Area2D-based player variant in 2nd row
+    $PlayerArea.position = Vector2(0, first_row_y + TILE_HEIGHT + ROW_GAP + TILE_HEIGHT / 2)
+
     add_collision_areas()
 
 func add_collision_areas() -> void:
     var tile_width = screen_size.x / TILE_COUNT
     var tile_height = 100
-    for column in range(TILE_COUNT):
-        var tile: ColorRect = Tile.instance()
-        tile.rect_position = Vector2(
-            column * tile_width,
-            first_row_y
-        )
-        tile.rect_size = Vector2(tile_width, TILE_HEIGHT)
-        add_child(tile)
+    for row in range(2):
+        var row_y: float = first_row_y + row * (TILE_HEIGHT + ROW_GAP)
+        for column in range(TILE_COUNT):
+            var tile: ColorRect = Tile.instance()
+            var tile_x: float = column * tile_width
+            tile.rect_position = Vector2(tile_x, row_y)
+            tile.rect_size = Vector2(tile_width, TILE_HEIGHT)
+            add_child(tile)
