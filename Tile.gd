@@ -12,6 +12,8 @@ func _init() -> void:
     collision_area.connect("body_entered", self, "_on_entered")
 
 func _on_entered(other: Node) -> void:
+    if $AnimationPlayer.is_playing():
+        $AnimationPlayer.stop(true)
     $AnimationPlayer.play("pulse")
 
 # Add collision thing
