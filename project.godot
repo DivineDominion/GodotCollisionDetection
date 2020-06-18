@@ -8,9 +8,14 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "ColorRect",
+"class": "Tile",
+"language": "GDScript",
+"path": "res://Tile.gd"
+} ]
 _global_script_class_icons={
-
+"Tile": ""
 }
 
 [application]
@@ -22,6 +27,7 @@ config/icon="res://icon.png"
 [display]
 
 window/size/resizable=false
+window/stretch/aspect="keep"
 
 [rendering]
 
