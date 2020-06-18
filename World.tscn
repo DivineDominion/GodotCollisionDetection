@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://World.gd" type="Script" id=1]
 [ext_resource path="res://player.png" type="Texture" id=2]
 [ext_resource path="res://PlayerBody.gd" type="Script" id=3]
 [ext_resource path="res://PlayerArea.gd" type="Script" id=4]
+[ext_resource path="res://SpeedControls.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4, 6 )
@@ -44,3 +45,33 @@ texture = ExtResource( 2 )
 position = Vector2( -4, -24 )
 scale = Vector2( 4, 4 )
 shape = SubResource( 1 )
+
+[node name="SpeedControls" type="HBoxContainer" parent="."]
+margin_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DecreaseButton" type="Button" parent="SpeedControls"]
+margin_right = 17.0
+margin_bottom = 20.0
+text = "-"
+
+[node name="SpeedLabel" type="Label" parent="SpeedControls"]
+margin_left = 21.0
+margin_top = 3.0
+margin_right = 53.0
+margin_bottom = 17.0
+text = "1234"
+
+[node name="IncreaseButton" type="Button" parent="SpeedControls"]
+margin_left = 57.0
+margin_right = 77.0
+margin_bottom = 20.0
+text = "+"
+[connection signal="button_up" from="SpeedControls/DecreaseButton" to="SpeedControls" method="_on_DecreaseButton_button_up"]
+[connection signal="button_up" from="SpeedControls/IncreaseButton" to="SpeedControls" method="_on_IncreaseButton_button_up"]

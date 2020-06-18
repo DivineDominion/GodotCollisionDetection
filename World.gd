@@ -24,6 +24,8 @@ func _ready() -> void:
     # Position Area2D-based player variant in 2nd row
     $PlayerArea.position = Vector2(0, first_row_y + TILE_HEIGHT + ROW_GAP + TILE_HEIGHT / 2)
 
+    $SpeedControls.rect_position = Vector2(screen_size.x / 2, 100)
+
     add_collision_areas()
 
 func add_collision_areas() -> void:
