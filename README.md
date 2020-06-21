@@ -9,8 +9,9 @@ Currently, this demonstrates two kinds of player nodes:
 
 You can 
 
-- [Watch a video recording](/assets/recording.mov)
-- [Read an explanation on my blog](https://christiantietze.de/posts/2020/06/godot-hit-testing/)
+- 📼 [Watch a video recording](/assets/recording.mov)
+- 👾 ["Play" it online](https://divinedominion.github.io/GodotCollisionDetection/)
+- 📖 [Read an explanation on my blog](https://christiantietze.de/posts/2020/06/godot-hit-testing/)
 
 ## License
 
